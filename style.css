@@ -1,0 +1,726 @@
+* {
+	margin: 0;
+	padding: 0;
+	user-select: none;
+}
+/* 首页模块 */
+header {
+	height: 2vw;
+	background: whitesmoke;
+}
+
+h1 {
+	color: #87CEFA;
+	font-size: 2vw;
+	margin-top: 1vw;
+	margin-left: 8vw;
+}
+
+h2 {
+	color: lightgray;
+	font-size: 1vw;
+	margin-left: 8vw;
+}
+
+.h1 {
+	color: #87CEFA;
+}
+
+.h1:hover {
+	color: orange;
+}
+
+.first {
+	color: #87CEFA;
+}
+
+a {
+	color: #c0c0c0;
+	text-decoration: none;  /*去除超链接下划线*/
+}
+
+a:hover {
+	color: #87CEFA;
+	transition: 1s;   /*变化事件*/
+}
+
+a:active {
+	color: #F4A460;
+}
+
+.title,
+nav {
+	display: inline-block;
+}
+
+header nav {
+	float: right;
+	margin-top: 5vw;
+}
+
+header ul li {
+	display: inline-block;
+	font-size: 1vw;
+	margin-left: 6vw;
+	color: #c0c0c0;
+}
+
+header ul li:hover {
+	color: #87CEFA;
+	transform: scale(1.1);
+	transition: 1s;
+}
+/* 搜索框 */
+form{
+	display: inline-block;  /*使搜索框不独占一行*/
+	border-radius: 1vw; /*实现圆角边框*/
+	padding-left: 50vw;
+	position: absolute;
+	margin-top:1vw ;
+	
+}
+[type="submit"]{
+	font-weight: bold;
+	opacity: 0.8;
+	padding: 0.4vw 0.8vw;
+	border-radius: 0.5vw;
+	border: 0.2vw solid #87CEFA;
+	cursor: pointer;
+	color: #87CEFA;
+	font-size: 0.6vw;
+}
+[type="submit"]:hover{
+	background: rgba(0,0,0,0.7);
+	color: snow;
+	transition: 0.3s;
+}
+#search{
+	border-radius: 0.5vw;
+	width: 20vw;
+	height: 1.5vw;
+	border: 0.2vw solid #87CEFA;
+	outline: none;
+	padding-left: 1vw;
+	font-size: 0.8vw;
+}
+/* 轮播图 */
+#box1 {
+	width: 100vw;
+	height: 40vw;
+	position: relative;  /*进行绝对定位*/
+	margin: 6vw auto;
+	overflow: hidden;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);   /*添加阴影*/
+}
+
+#box1 ul {
+	width: 525vw;
+	position: absolute; /*相对于#box1进行绝对定位*/
+	transition: 1s;
+}
+
+#box1 ul li {
+	list-style-type: none;
+	float: left;
+}
+
+img {
+	width: 105vw;
+	height: 50vw;
+}
+
+#left,
+#right {
+	position: absolute;/*相对于#box1进行绝对定位*/
+	/* background: gray; */
+	width: 4vw;
+	opacity: 0.3;
+	font-size: 4vw;
+	text-align: center;
+	line-height: 40vw;
+	color: greenyellow;
+}
+
+#right {
+	right: 0;
+}
+
+#left:hover,
+#right:hover {
+	opacity: 0.6;
+	color: aqua;
+	cursor: pointer;
+}
+
+main1 {
+	width: 100%;
+	height: 400px;
+	display: flex;
+	justify-content: space-around;
+}
+
+aside {
+	width: 10vw;
+	display: flex;
+	align-items: center;
+}
+
+article {
+	width: 90vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+
+section {
+	width: 85vw;
+	height: 40vw;
+	display: flex;
+	justify-content: space-between;
+}
+
+.rmjd {
+	width: 21vw;
+	height: 10vw;
+	box-sizing: border-box;
+	background: white;
+	display: flex;    /*进行flex布局*/
+	flex-direction: column;  /*主轴为垂直方向，起点在上沿*/
+	justify-content: space-between; /*位于个行之间留有空白的容器内*/
+	align-items: center;
+}
+
+section img {
+	width: 15vw;
+	height: 20vw;
+	box-shadow: 0 0 1vw gray;
+}
+
+.rmjd:hover {
+	transform: scale(1.1);
+	transition: 1s;
+	cursor: pointer;
+}
+#jd{
+	height: 30vw;
+}
+
+section p {
+	margin-top: 4vw;
+	color: #87CEFA;
+}
+
+footer {
+	width: 100%;
+	height: 4vw;
+	background: white;
+	color: #696969;
+}
+
+.fot {
+	width: 100%;
+	height: 8vw;
+	margin: 0 auto;
+	text-align: center;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	font-size: 0.8vw;
+}
+
+.bq {
+	width: 100%;
+	height: 4vw;
+	text-align: center; /*文字居中*/
+	font-size: 0.8vw;
+}
+/* 景点模块 */
+/* 瀑布流实现 */
+.list {
+	width: 100%;
+	margin: 0 auto;
+	/* column-width: 250px; */
+	column-count: 5;      /*列数*/
+	column-gap: 2.0vw;     /*列间距*/
+	-webkit-column-break-inside: avoid;
+	page-break-inside: avoid;
+	break-inside: avoid;     /*列或区块发生中断时候的表现 */
+}
+
+.list figure {
+	height: 100%;
+	margin: 0;
+	overflow: auto;
+}
+
+.list figure img {
+	width: autovw;
+	max-width: 100%;
+	height: auto;
+	cursor: pointer;
+}
+.list figure img:hover{
+	transform: scale(1.1);
+	/* transform: scaleX(1.08); */
+	transition: 1s;
+}
+
+
+.list p {
+	font-size: 0.8vw;
+	color: dimgray;
+	text-align: center;
+}
+header{
+	height: 1vw;
+}
+main{
+	height: 95vw;
+}
+#jd{
+	height: 40vw;
+	/* position: absolute; */
+}
+/* 美食模块 */
+#food{
+	height: 75vw;
+	font-size: 0.8vw;
+}
+.meishi{
+	margin-top: 8vw;
+}
+.meishi h2{
+	text-align: center;
+	font-size: 2vw;
+	color: #87CEFA;
+}
+.pic{
+	width: 50vw;
+	height:30vw;
+	box-shadow: 0 0 0.8vw gray;
+border-radius:0.8vw ;
+}
+.img_left{
+	float: left;
+	margin-top: 3vw;
+}
+.meishi_right{
+	float: right;
+	list-style: none;
+	width: 48vw;
+	letter-spacing: 0.2vw;
+	/* font-size: 0.8vw; */
+}
+.meishi_right h1{
+	text-align: center;
+	color: gray;
+}
+.meishi_left{
+	float: left;
+	list-style: none;
+	width: 50vw;
+	height: 20vw;
+	letter-spacing: 0.4vw;
+	margin-top: -20vw;
+	/* font-size: 0.8vw; */
+}
+.meishi_left p{
+	
+}
+.img_right{
+	float:right;
+	margin-top: 1.5vw;
+	margin-left: 28vw;
+}
+.pic2{
+	width: 30vw;
+	height: 18vw;
+	box-shadow: 0 0 10px gray;
+	border-radius:0.8vw ;
+}
+.img4{
+	float: left;
+	margin-right: 10vw;
+	margin-top: 5vw;
+}
+.pic3{
+	width: 45vw;
+	height: 25vw;
+	box-shadow: 0 0 10px gray;
+	border-radius:0.8vw ;
+}
+.meishi4{
+	display: inline-block;
+	float: right;
+	width: 44vw;
+	letter-spacing: 0.4vw;
+    /* font-size: 0.8vw; */
+}
+
+/* 文化模块 */
+.culture{
+	height: 60vw;
+	background: url(../img/cul.07.jpg);
+	/* opacity: 0.6 */
+	font-size: 0.8vw;
+	background-size: cover;
+}
+.cul_left{
+	float: left;
+	width: 35vw;
+}
+.cul h1{
+	margin-left: 25vw;
+	font-size: 2vw;
+	color: gray;
+	margin-top: 3vw;
+}
+.cul p{
+	width: 40vw;
+	margin-left: 10vw;
+	letter-spacing: 0.5vw;
+	color: black;
+	font-size: 0.8vw;
+}
+/* 文化模块幻灯片 */
+#box_cul{
+	width: 30vw;
+	height: 20vw;
+	margin-top: 10vw;
+	margin-left: 10vw;
+    border-radius: 2%;
+	position: relative;
+}
+#box_cul img{
+	width: 30vw;
+	height: 20vw;
+	border-radius: 0.8vw;
+	display: none;
+}
+#cul_btn{
+	position: absolute;
+	bottom: 0.5vw;
+	right: 1vw;
+}
+#cul_btn button{
+	background: gray;
+	color: white;
+	width: 1vw;
+	height: 1vw;
+	border-radius: 50%;
+	border: none;
+	outline: none;
+	margin-left: 1vw;
+}
+#cul_btn button:hover{
+	background:lightblue ;
+	cursor: pointer;
+}
+
+.cul_right{
+	float: right;
+	width: 60vw;
+}
+/* 茶馆文化 */
+.chaguan h1{
+	margin-right: 10vw;
+	writing-mode: tb;
+	font-size: 1vw;
+	color: black;
+	margin-left:12vw ;
+	margin-top: 2vw;
+}
+.chaguan p{
+	margin-top: -4.3vw;
+	margin-left: 16vw;
+	color: black;
+	font-size: 0.8vw;
+}
+/* 麻将文化 */
+.majiang h1{
+	writing-mode: tb;
+	font-size: 1vw;
+	color: black;
+	margin-left:12vw ;
+	margin-top: 2vw;
+}
+.majiang p{
+	margin-top: -3.3vw;
+	margin-left: 16vw;
+	color: black;
+	font-size: 0.8vw;
+}
+/* 蜀绣文化 */
+.shuxiu h1{
+	writing-mode: tb;
+	font-size: 1vw;
+	color: black;
+	margin-left:12vw ;
+	margin-top: 2vw;
+}
+.shuxiu  p{
+	margin-top: -3.3vw;
+	margin-left: 16vw;
+	color: black;
+	font-size: 0.8vw;
+}
+/* 川剧文化 */
+.chuanju h1{
+	writing-mode: tb;
+	font-size: 1vw;
+	color:black;
+	margin-left:12vw ;
+	margin-top: 2vw;
+}
+.chuanju  p{
+	margin-top: -3.3vw;
+	margin-left: 16vw;
+	color: black;
+	font-size: 0.8vw;
+}
+/* 酒文化 */
+.jiu h1{
+	writing-mode: tb;
+	font-size: 1vw;
+	color: black;
+	margin-left:12vw ;
+	margin-top: 2vw;
+}
+.jiu  p{
+	margin-top: -3vw;
+	margin-left: 16vw;
+	color: black;
+	font-size: 0.8vw;
+}
+/* 火锅文化 */
+.huoguo h1{
+	writing-mode: tb;
+	font-size: 1vw;
+	color: black;
+	margin-left:12vw ;
+	margin-top: 2vw;
+}
+.huoguo  p{
+	margin-top: -3vw;
+	margin-left: 16vw;
+	color: black;
+	font-size: 0.8vw;
+}
+/* 熊猫文化 */
+.xiongmao h1{
+	writing-mode: tb;
+	font-size: 1vw;
+	color: black;
+	margin-left:12vw ;
+	margin-top: 1vw;
+}
+.xiongmao  p{
+	margin-top: -3vw;
+	margin-left: 16vw;
+	color: black;
+	font-size: 0.8vw;
+}
+.mes{
+	height: 80vw;
+}
+#p1{
+	margin-left: 45vw;
+	margin-top: 8vw;
+	font-size: 1vw;
+	opacity: 0.8;
+}
+#p2{
+	margin-left: 46vw;
+	color: darkgray;
+	font-size: 0.5vw;
+}
+.mes06 {
+	margin-left: 10vw;
+	
+}
+#mes_img01{
+	width: 4vw;
+	height: 3vw;
+	margin-left: 10vw;
+	margin-top: 10vw;
+}
+#mes_img01:hover{
+	transform: scale(1.1);
+	transition: 1s;
+	cursor: pointer;
+}
+#mes_img02{
+	width: 4vw;
+	height: 3vw;
+	margin-left: 20vw;
+}
+#mes_img02:hover{
+	transform: scale(1.1);
+	transition: 1s;
+	cursor: pointer;
+}
+#mes_img04{
+	width: 4vw;
+	height: 3vw;
+	margin-left: 20vw;
+}
+#mes_img04:hover{
+	transform: scale(1.1);
+	transition: 1s;
+	cursor: pointer;
+}
+#mes_img03{
+	width: 4vw;
+	height: 3vw;
+	margin-left: 20vw;
+}
+#mes_img03:hover{
+	transform: scale(1.1);
+	transition: 1s;
+	cursor: pointer;
+}
+.mes1 p{
+	margin-left: 15vw;
+	margin-top: 4.5vw;
+	font-size: 1vw;
+}
+.mes1 input{
+	margin-left: 15vw;
+	height: 2vw;
+	width: 15vw;
+	padding-left: 1vw;
+	margin-top: 0.5vw;
+	font-size: 0.8vw;
+}
+.mes2 p{
+	margin-left: 40vw;
+	margin-top: -4vw;
+	font-size: 1vw;
+}
+.mes2 input{
+	margin-left: 40vw;
+	height: 2vw;
+	width: 15vw;
+	padding-left: 1vw;
+	margin-top: 0.5vw;
+	font-size: 0.8vw;
+}
+.mes3 p{
+	margin-left: 65vw;
+	margin-top: -4vw;
+	font-size: 1vw;
+}
+.mes3 input{
+	margin-left: 65vw;
+	height: 2vw;
+	width: 15vw;
+	padding-left: 1vw;
+	margin-top: 0.5vw;
+	font-size: 0.8vw;
+}
+.mes4 p{
+	margin-left: 15vw;
+	margin-top: 1vw;
+	font-size: 1vw;
+}
+.mes4 input{
+	margin-left: 15vw;
+	height: 5vw;
+	width: 66vw;
+	margin-top: 1vw;
+	padding-bottom: 2vw;
+	font-size: 0.8vw;
+}
+.mes5 button{
+	margin-left: 15vw;
+	margin-top: 1vw;
+	width: 10vw;
+	height: 3vw;
+	background: lightblue;
+	color: white;
+	font-size: 0.8vw;
+}
+.liuyan{
+	margin-left: 15vw;
+	margin-top: 1vw;
+	color: darkgray;
+	font-size: 1vw;
+}
+.hr{
+	opacity: 0.5;
+	margin-top: 1vw;
+}
+.mes_img{
+	width: 7vw;
+	height: 6vw;
+	margin-left: 45vw;
+	opacity: 0.8;
+}
+.liuyan1{
+	margin-left: 45vw;
+	color: darkgray;
+	font-size: 1vw;
+}
+.ab1{
+	margin-top: 15vw;
+	margin-left: 10vw;
+	opacity: 0.9;
+	position: relative;
+	z-index: 1;
+}
+.ab2{
+	position: absolute;
+	margin-top: -22.6vw;
+	margin-left: 10vw;
+	opacity: 0.8;
+	transform: rotate(-9deg)
+}
+.ab3{
+	margin-top: -35vw;
+	margin-left: 10vw;
+	transform: rotate(-20deg);
+	opacity: 0.5;
+}
+.aaa{
+	margin-top: 10vw;
+}
+.about{
+	display: inline-block;
+	margin-left: 45vw;
+	margin-top: -10vw;
+	
+}
+.about h1{
+	color: black;
+	opacity: 0.5;
+	font-size: 1vw;
+	margin-top: 5vw;
+	margin-left: 8vw;
+}
+.about p{
+	margin-top: 5vw;
+	margin-left: 8vw;
+	color: gray;
+	line-height: 3vw;
+}
+.bbb{
+	margin-top: -3vw;
+}
+.about1{
+	height: 90vw;
+}
+.about2{
+	height: 10vw;
+	background: white;
+}
+#ab_fot{
+	height: 2vw;
+}
+
+
+
+
+
+
+

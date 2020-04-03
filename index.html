@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	</head>
+	<body>
+		<header class="header">
+			<div class="title">
+				<h1><a href="index.html" class="h1">成都旅游网</a></h1>
+				<h2>"天府之国"——成都</h2>
+			</div>
+			<form action="#" method="post">
+				<input type="text" id="search" placeholder="请输入旅游景点">
+				<input type="submit" value="搜索">
+			</form>
+			<nav>
+				<ul>
+					<li><a href="index.html" class="first">首页</a></li>
+					<li><a href="sight.html">景点/Sight</a></li>
+					<li><a href="Food.html">美食/Food</a></li>
+					<li><a href="Culture.html" >文化/Culture</a></li>
+					<li><a href="About.html">关于/About</a></li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+		<div id="box1">
+			<ul id="ul1">
+				<li><img src="img/lbt.02.jpg" ></li>
+				<li><img src="img/lbt.01.jpg" ></li>
+				<li><img src="img/lbt.03.jpg" ></li>
+				<li><img src="img/lbt.04.jpg" ></li>
+				<li><img src="img/lbt.05.jpg" ></li>
+			</ul>
+			<div id="left"> < </div>
+			<div id="right"> > </div>
+		</div>
+		<!-- <main1> -->
+		<div >
+			<aside>
+				<h1>热门景点</h1>
+			</aside>
+			<article id="jd">
+				<section>
+					<div class="rmjd">
+						<p>"童话世界"——九寨沟</p>
+					</div>
+					<div class="rmjd">
+						<img src="img/jdjs.02.jpg" >
+					</div>
+					<div class="rmjd">
+						<p>"世界水利文化的鼻祖"——都江堰</p>
+					</div>
+					<div class="rmjd">
+						<img src="img/jdjs.04.jpg" >
+					</div>
+				</section>
+				<section>
+					<div class="rmjd">
+						<img src="img/jdjs.01.jpg" >
+					</div>
+					<div class="rmjd">
+						<p>"最美街道"宽窄巷子</p>
+					</div>
+					<div class="rmjd">
+						<img src="img/jdjs.03.jpg" >
+					</div>
+					<div class="rmjd">
+						<p>"成都夜色"</p>
+					</div>
+				</section>
+			</article>
+		</div>
+		</main>
+		<hr>
+		<footer>
+			<div class="fot">
+				<p>Adress/地址:XX省XX市XX县XX路</p>
+				<p>Tel/电话:020-000000</p>
+				<p>Mail/邮箱XXX@.com</p>
+			</div>
+			<div class="bq">
+				<p>版权所有@XXX</p>
+			</div>
+		</footer>
+
+		<script type="text/javascript">
+			let oUl=document.getElementById("ul1")
+			let oLeft=document.getElementById("left")
+			let oRight=document.getElementById("right")
+			let num=document.getElementsByTagName("li").length-5
+			let aBtn=document.getElementsByTagName("button")
+			let aImg=document.getElementsByTagName("img")
+			let n=0
+			
+			// 自动切换幻灯片
+			let timer =setInterval(rightplay,3000)
+			// 用户手动点击切换
+			oRight.onclick=function  () {
+				// 停止自动切换幻灯片
+				clearInterval(timer)
+				// 手动切换下一张幻灯片
+				rightplay()
+				// 重新开始自动切换幻灯片
+				timer=setInterval(rightplay,3000)
+			}
+			
+			oRight.onclick=function  () {
+				rightplay()
+			}
+			
+			function rightplay () {
+				n++
+				if (n==num) {
+					n=0
+				}
+				oUl.style.left=-105*n+'vw'
+			}
+			
+			oLeft.onclick=function  () {
+				leftplay()
+			}
+			
+			function leftplay () {
+				n--
+				if (n<0) {
+					n=num-1
+				}
+				oUl.style.left=-105*n+'vw'
+			}
+			
+			for (let i=0;i<oUl.length;i++) {
+				oUl.onmouseover=function  () {
+					clearInterval(timer)
+				}
+				oUl.onmouseout=function  () {
+					timer=setInterval(rightplay,3000)
+				}
+			}
+		</script>
+	</body>
+</html>
